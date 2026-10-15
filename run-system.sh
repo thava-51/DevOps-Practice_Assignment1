@@ -8,3 +8,5 @@ DB=database
 GATEWAY=mcp-gateway
 VOLUME=chinook-data
 LABEL=project=chinook-agent
+
+docker network create --label "$LABEL" "$NETWORK"  
