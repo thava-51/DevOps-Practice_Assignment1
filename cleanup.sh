@@ -6,7 +6,9 @@ export MSYS_NO_PATHCONV=1
 NETWORK=agent-network
 DB=database
 VOLUME=chinook-data
+SEEDER_IMAGE=chinook-seeder:1.0
 
 docker rm -f "$DB"
 docker volume rm "$VOLUME"
 docker network rm "$NETWORK"
+docker rmi "$SEEDER_IMAGE"
