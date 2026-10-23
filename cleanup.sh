@@ -8,6 +8,7 @@ DB=database
 GATEWAY=mcp-gateway
 VOLUME=chinook-data
 SEEDER_IMAGE=chinook-seeder:1.0
+AGENT_IMAGE=chinook-agent:1.0
 
 docker rm -f "$GATEWAY"
 docker ps -aq --filter label=docker-mcp=true | xargs -r docker rm -f
@@ -15,3 +16,4 @@ docker rm -f "$DB"
 docker volume rm "$VOLUME"
 docker network rm "$NETWORK"
 docker rmi "$SEEDER_IMAGE"
+docker rmi "$AGENT_IMAGE"
