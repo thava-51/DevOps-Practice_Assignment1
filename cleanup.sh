@@ -10,6 +10,7 @@ VOLUME=chinook-data
 SEEDER_IMAGE=chinook-seeder:1.0
 
 docker rm -f "$GATEWAY"
+docker ps -aq --filter label=docker-mcp=true | xargs -r docker rm -f
 docker rm -f "$DB"
 docker volume rm "$VOLUME"
 docker network rm "$NETWORK"
